@@ -2,6 +2,7 @@
 import './App.css';
 
 
+
 const getUserFromDB = (user) => ({
   "Alana Filgueiras": "https://avatars.githubusercontent.com/u/75276526?s=400&u=e5b61b3ad2e8b18a377302ce3950627a8d0a5b3a&v=4"
 })[user]
@@ -12,11 +13,14 @@ function Profile(props) {
   
   const url = getUserFromDB(id);
 
-  return <picture>
+  return <div class='container'>
+      <picture>
       <img id="imgperfil" src={url} alt={id} />
       <h2>{id}</h2>
       {conteudo}
-  </picture>
+      </picture>
+      </div>
+
 }
 function Description(props){
   return <span id="descricao"> {props.desc}</span>;
@@ -59,7 +63,7 @@ function MyProfileSkills(props){
 
 
 function App() {
-  return (<div>
+  return (<div class='container'>
     <Profile id="Alana Filgueiras">
       <Description desc="Aprendendo React na força do ódio"/>
       <ProfileLinks 
